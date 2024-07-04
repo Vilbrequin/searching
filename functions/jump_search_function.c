@@ -1,23 +1,7 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <math.h>
 
-int jump_search(int* arr, int size, int element);
 int linear_search(int* arr, int l, int h, int element);
-
-int main(int argc, char* argv[]){
-    if (argc < 2) {
-        printf("Usage: %s <element>\n", argv[0]);
-        return 1;
-    }
-    int arr[] = {1, 2, 3, 4, 5, 6};
-    int size = sizeof(arr)/sizeof(arr[0]);
-    int element  = atoi(argv[1]);
-
-    int br = jump_search(arr, size, element);
-    printf("index = %d\n", br);
-    return 0;
-}
 
 int jump_search(int* arr, int size, int element){
     int block_size = (int)sqrt((double)size);
